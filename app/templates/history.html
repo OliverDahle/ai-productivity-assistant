@@ -1,0 +1,16 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>History</h2>
+<ul class="list-group">
+  <!-- Looping through each item in the history list passed from Flask, using Jinja2 -->
+  {% for h in history %}
+  <!-- Bootstrap for styling the individual elements -->
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="{{ url_for('planner.plan', plan_id=h.plan_id) }}">{{ h.plan_name }}</a>
+      <span class="badge bg-secondary rounded-pill">{{ h.datetime.strftime('%Y-%m-%d %H:%M') }}</span>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

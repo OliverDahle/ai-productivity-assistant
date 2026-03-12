@@ -1,0 +1,18 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Edit Your Personal Preferences (Schema)</h2>
+<!-- Submits form using the POST method -->
+<form method="POST">
+  <!-- Renders a hidden CSRF token to protect the form -->
+  {{ form.hidden_tag() }}
+  <!-- Defines the input field with label and area -->
+  <div class="mb-3">
+    {{ form.personal_schema.label(class_='form-label') }}
+    {{ form.personal_schema(class_='form-control', rows=8) }}
+  </div>
+  <!-- Button for submitting the form -->
+  <button type="submit" class="btn btn-primary">Update Schema</button>
+</form>
+{% endblock %}

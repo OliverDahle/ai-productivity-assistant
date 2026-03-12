@@ -1,0 +1,8 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Your Plan</h2>
+<!-- Shows the plan made in pure text format -->
+<pre class="p-3 bg-light border rounded">{{ plan.tekstformat }}</pre>
+{% endblock %}

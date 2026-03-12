@@ -1,0 +1,15 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="text-center">
+  <h1>Welcome to your Personal Productivity Assistant</h1>
+  <!-- Creates a clickable link setup using Bootstrap's list-group -->
+  <div class="list-group mt-4">
+    <a href="{{ url_for('planner.make_plan') }}" class="list-group-item list-group-item-action">Make a Plan</a>
+    <a href="{{ url_for('planner.history') }}" class="list-group-item list-group-item-action">View Plan History</a>
+    <a href="{{ url_for('planner.schema') }}" class="list-group-item list-group-item-action">Edit Personal Schema</a>
+    <a href="{{ url_for('auth.profile') }}" class="list-group-item list-group-item-action">Profile Settings</a>
+  </div>
+</div>
+{% endblock %}

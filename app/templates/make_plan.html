@@ -1,0 +1,22 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Generate Plan</h2>
+<!-- Submits form using the POST method -->
+<form method="POST">
+  <!-- Renders a hidden CSRF token to protect the form -->
+  {{ form.hidden_tag() }}
+  <!-- Defines the input fields with labels and area -->
+  <div class="mb-3">
+    {{ form.time_available.label(class_='form-label') }}
+    {{ form.time_available(class_='form-control') }}
+  </div>
+  <div class="mb-3">
+    {{ form.tasks.label(class_='form-label') }}
+    {{ form.tasks(class_='form-control', rows=4) }}
+  </div>
+  <!-- Button for submitting the form -->
+  <button type="submit" class="btn btn-primary">Generate</button>
+</form>
+{% endblock %}

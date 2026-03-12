@@ -1,0 +1,30 @@
+<!-- All templates will inherit the base layout with navbar, Bootstrap, and common structure -->
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Profile Settings</h2>
+<!-- Submits form using the POST method -->
+<form method="POST">
+  <!-- Renders a hidden CSRF token to protect the form -->
+  {{ form.hidden_tag() }}
+  <!-- Defines the input fields with labels and area -->
+  <div class="mb-3">
+    {{ form.email.label(class_='form-label') }}
+    {{ form.email(class_='form-control') }}
+  </div>
+  <div class="mb-3">
+    {{ form.age.label(class_='form-label') }}
+    {{ form.age(class_='form-control') }}
+  </div>
+  <div class="mb-3">
+    {{ form.gender.label(class_='form-label') }}
+    {{ form.gender(class_='form-select') }}
+  </div>
+  <div class="mb-3">
+    {{ form.life_situation.label(class_='form-label') }}
+    {{ form.life_situation(class_='form-select') }}
+  </div>
+  <!-- Button for submitting the form -->
+  <button type="submit" class="btn btn-primary">Update Profile</button>
+</form>
+{% endblock %}
