@@ -73,3 +73,7 @@ The project was designed to focus on simplicity and usability, providing the cor
     ```
 
 6. Visit the application in your browser at http://127.0.0.1:5000/.
+
+## License 
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
